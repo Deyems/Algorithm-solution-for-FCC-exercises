@@ -1,0 +1,141 @@
+/*HTML DECLARATIONS FOR AFRICAN FABRICS*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <title>Ankara | By Toona</title>
+</head>
+  <body>
+    <div class="wrapper">
+    <header id="header">
+      <section>
+        <nav id="nav-bar">
+          <div class="nav-bar-brand">
+            <img id="header-img" src="" />
+          </div>
+          <ul>
+            <li><a href="#source" class="nav-link">Source</a></li>
+            <li><a href="#pricing" class="nav-link">Pricing</a></li>
+            <li><a href="#by-products" class="nav-link">By-Products</a></li>
+          </ul>
+        </nav>
+      </section>
+      <br><br><br><br><br>
+      <figure>
+        <video id="video" controls>
+  <source src="https://r2---sn-aigzrn7s.googlevideo.com/videoplayback?expire=1573011787&ei=6-zBXZbsL4HvVsaqmrAL&ip=169.159.70.118&id=o-AFZSOq9jPn6IZUfT022cgPMgoP2j2IgWmI4xpbn_TVkl&itag=22&source=youtube&requiressl=yes&mm=31%2C26&mn=sn-aigzrn7s%2Csn-25ge7nls&ms=au%2Conr&mv=m&mvi=1&pl=18&initcwndbps=107500&mime=video%2Fmp4&ratebypass=yes&dur=676.699&lmt=1561447893633119&mt=1572990098&fvip=2&fexp=23842630&beids=9466586&c=WEB&txp=5432432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cmime%2Cratebypass%2Cdur%2Clmt&sig=ALgxI2wwRAIgJ70byaa-GMOX05GAF_K_VJMM0razw-5GBIyXJscn3esCIGBDd7-STDinhfyxKZvqO_Cg7uk9dkcz1aCg2zeJB8x_&lsparams=mm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AHylml4wRQIgLdCyJnKfAk6bHGiM3R9ziX0W_mTSUtV9DLPjHczmpKUCIQD7hXr4C_xsxpXQZ6saAwy2jjLgY1xujkqVxJOInuB-ng%3D%3D" type="video/mp4">
+  <source src="ummy://www.youtube.com/watch?v=0VIqY4SDPd8&sf_type=audio" type="video/mp3">
+  Your browser does not support the video tag.
+</video>
+        <figcaption>DIY ANKARA ROUND PURSE OUT OF PLASTIC BALL Adapted from 
+          <em><b>my things my way</b></em> </figcaption>
+      </figure>
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <div class="input-grp">
+          <input id="email" name="email" type="email" placeholder="Enter your email" required>
+          <div>
+            <input id="submit" class="" type="submit" value="Subscribe">
+          </div>
+        </div>
+      </form>
+    </header>
+    <section id="source">
+      <div></div>
+      <div>
+        <h2>How is it made?</h2>
+        <ul>
+          <li>Preparation</li>
+          <li>Design</li>
+          <li>Wax Printing</li>
+          <li>Indigo Dying</li>
+          <li>Crackling Effect</li>
+          <li>Colouration</li>
+          <li>Washing</li>
+          <li>Finishing</li>
+        </ul>
+      </div>
+      </section>
+    <section id="pricing">
+      <div>a</div>
+      <div></div>
+      <div></div>
+      </section>
+    <section id="by-products"></section>
+    </div>
+  </body>
+</html>
+
+
+
+/*CSS DECLARATIONS*/
+body{
+  --bg-color: rgb(200,200,200,0.28);
+  --nav-link-bgcolor: rgba(240,30,45,0.8);
+  --nav-link-color: rgb(255,255,255);
+  --hover-bg-color: rgba(220,30,45,1);
+  --nav-padding: 10px;
+  --gen-padding: 40px;
+  
+  /*background: rgb(200,200,200,0.28); */
+}
+
+.wrapper{
+  background: var(--bg-color);
+  width: 100%;
+  min-height: 100vh;
+}
+
+#nav-bar{
+  display: flex;
+  justify-content: space-between;
+  padding: 2% var(--gen-padding);
+  position: fixed;
+  width: 91%;
+  background: hsl(80, 40%, 76%);
+}
+
+#nav-bar ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+#nav-bar a{
+  background-color: var(--nav-link-bgcolor);
+  color: var(--nav-link-color);
+  text-decoration: none;
+  padding: var(--nav-padding);
+}
+
+#nav-bar a:hover{
+  background-color: var(--hover-bg-color);
+}
+
+video{
+  width: 80%;
+  height: 400px;
+  margin: auto;
+}
+
+#source{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  border: 2px solid red;
+}
+
+#source div{
+  height: 400px;
+  flex: 1;
+/*   padding: 5px; */
+}
+
+#source>div:nth-of-type(1){
+  background: url("https://1dkb0pwa0u-flywheel.netdna-ssl.com/wp-content/uploads/2017/08/Pile-of-our-brand-new-African-wax-print-fabrics-at-the-market-in-Tanzania.jpg") no-repeat;
+background-size: cover;
+/*  background-repeat: no-repeat; */
+}
+

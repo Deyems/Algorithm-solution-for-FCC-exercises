@@ -1,0 +1,32 @@
+function sumPrimes(num) {
+
+function arrOfNum(num){
+  let start = 2;
+  let arr= [];
+ while(start<=num){
+  arr.push(start);
+  start++;
+  }
+return arr;
+}
+
+return arrOfNum(num).filter((val,index,arr)=> {
+let increase = arr[0];
+let next;
+while(increase < arr.length){
+	next = val/increase;
+if(arr.includes(next)){ return false; }
+  increase++;
+}
+	let squared = Math.sqrt(val);
+
+if(arr.includes(squared)) return false;
+return true;
+}).reduce((acc,val)=> {
+  acc += val;
+  return acc;
+});
+
+}
+
+console.log(sumPrimes(977));

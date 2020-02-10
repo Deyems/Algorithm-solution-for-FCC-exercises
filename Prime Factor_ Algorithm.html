@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/Algorithm-PrimeFactor.html -->
+<html lang="en" style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache no-svg no-inlinesvg no-smil no-svgclippaths"><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]>      <html class="no-js"> <![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<title>Prime Factor: Algorithm</title>
+<meta name="description" content="Step by Step Algorithm of Prime factor using spreadsheet">
+<meta name="keywords" content="prime factor, prime number, mod, modulus, MS Excel, spreadsheet, parallel processing, Do-While loop, Excel iteration example, prime factorization, fundamental theorem of arithmetic, divisibility, GCD, LCM, divisor, divisible, Sieve of Erastosthenes, Erastosthenes algorithm, composite number, prime calculator, prime factorization calculator, list of divisor calculator, list of divisor, Erastosthenes calculator, prime composite calculator, number theory calculator">
+<meta name="author" content="Kardi Teknomo">
+
+<!-- Mobile viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<link rel="shortcut icon" href="https://people.revoledu.com/kardi/images/favicon.ico" type="image/x-icon">
+
+<!-- CSS-->
+<!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->
+<link href="./Prime Factor_ Algorithm_files/css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="./Prime Factor_ Algorithm_files/normalize.css">
+<link rel="stylesheet" href="./Prime Factor_ Algorithm_files/flexslider.css">
+<link rel="stylesheet" href="./Prime Factor_ Algorithm_files/colorblocks-style.css">
+
+<!-- end CSS-->
+    
+<!-- JS-->
+<script src="./Prime Factor_ Algorithm_files/f.txt"></script><script src="./Prime Factor_ Algorithm_files/f(1).txt"></script><script src="./Prime Factor_ Algorithm_files/osd.js.download"></script><script async="" src="./Prime Factor_ Algorithm_files/analytics.js.download"></script><script src="./Prime Factor_ Algorithm_files/f(2).txt" id="google_shimpl"></script><script data-ad-client="ca-pub-3592990240684847" async="" src="./Prime Factor_ Algorithm_files/f(3).txt" data-checked-head="true"></script>
+<script src="./Prime Factor_ Algorithm_files/modernizr-2.6.2.min.js.download"></script>
+<!-- end JS-->
+
+<link rel="preload" href="https://adservice.google.com.ng/adsid/integrator.js?domain=people.revoledu.com" as="script"><script type="text/javascript" src="https://adservice.google.com.ng/adsid/integrator.js?domain=people.revoledu.com"></script><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=people.revoledu.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=people.revoledu.com"></script><link rel="preload" href="./Prime Factor_ Algorithm_files/f(2).txt" as="script"></head>
+
+<body id="home">
+<!-- header area -->
+    <header class="wrapper clearfix">
+        <div id="banner">        
+        	<div id="logo"><a href="https://people.revoledu.com/kardi/"><img src="./Prime Factor_ Algorithm_files/basic-logo.jpg" alt="logo"></a></div> 
+        </div>
+        
+        <!-- main navigation -->
+        <nav id="topnav">
+        <div class="menu-toggle">Menu</div>  
+        	<ul class="srt-menu" id="menu-main-navigation">
+                <li class="current"><a href="https://people.revoledu.com/kardi/">Home page</a></li>
+                <li><a href="https://people.revoledu.com/kardi/research/index.html">Research</a>
+                	<ul>
+                    	<li>
+                            <a href="https://people.revoledu.com/kardi/research/index.html">List</a>
+                        </li>
+                    	<li>
+                        	<a href="https://people.revoledu.com/kardi/publication/index.html">Publication</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/publication/ResearchCollaborationGuide.html">Research Collaboration Guide</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://people.revoledu.com/kardi/tutorial/index.html">Tutorial</a>
+                    <ul>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/index.html">Free Online Tutorials</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/AHP/purchase.html">Analytic Hierarchy Process</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/DecisionTree/purchase.html">Decision Tree</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/EM/purchase.html">Gaussian Mixture Model and EM Algorithm</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/Clustering/purchase.html">Hierarchical Clustering</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/kMean/purchase.html">K Means Clustering</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/KNN/purchase.html">K Nearest Neighbor</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/MarketBasket/purchase.html">Market Basket Analysis</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/NeuralNetwork/purchase.html">Neural Network</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/Queuing/purchase.html">M/M/s Queuing Spreadsheet</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/ReinforcementLearning/purchase.html"> Q-Learning</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/tutorial/SVM/purchase.html">Support Vector Machines</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://people.revoledu.com/kardi/resources/index.html">Software</a>
+                    <ul>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/resources/index.html">Interactive Programs</a>
+                        </li>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/research/pedestrian/MicroPedSim/download.htm">Micro-PedSim</a>
+                        </li>
+                    </ul>
+                </li><li><a href="https://people.revoledu.com/kardi/Service/index.html">Service</a></li>
+                <li><a href="https://people.revoledu.com/kardi/Idea/index.html">Blog</a>
+                    <ul>
+                        <li>
+                            <a href="https://people.revoledu.com/kardi/Idea/JewelsMorningDew.html">Jewels of Morning Dew</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://people.revoledu.com/kardi/personal/contact.htm">About</a>
+	                <ul>
+                    	<li>
+                        	<a href="https://people.revoledu.com/kardi/personal/cv/index.html">Resume</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/faq.htm">Frequently Asked Questions</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/personal/contact.htm">Contact</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/Donation.htm">Donate</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/tutorial/Link2Us.htm">Link to Us</a>
+                        </li>
+                        <li>
+                        	<a href="https://people.revoledu.com/kardi/copyright.html">Terms of Use</a>
+                        </li>
+                    </ul>
+                </li>	
+			</ul>     
+		</nav><!-- #topnav -->
+    </header><!-- end header -->
+<!-- hero area (the grey one with a slider -->
+    <section id="page-header" class="clearfix">    
+    <div class="wrapper">
+	      <h1 id="article-title">Algorithm to compute prime factor</h1>
+    </div>
+    </section><!-- end hero area -->
+
+<!-- main content area -->   
+<div id="main" class="wrapper clearfix" style="height: auto !important;"><div class="google-auto-placed" style="text-align: center; width: 100%; height: auto; clear: both;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-3592990240684847" data-adsbygoogle-status="done" style="display: block; margin: 10px auto; background-color: transparent; height: 280px;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;"><iframe width="1200" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 280px; overflow: visible;" src="./Prime Factor_ Algorithm_files/saved_resource.html"></iframe></ins></ins></ins></div>   
+
+	<!-- content area -->    
+	<section id="content">
+    	<main>
+ <p>
+  <a href="https://people.revoledu.com/kardi/copyright.html">
+   By Kardi Teknomo, PhD
+  </a>
+  .
+ </p>
+ <p>
+  <img height="50" src="./Prime Factor_ Algorithm_files/Prime.png" width="50" alt="Prime factor Algorithm">
+ </p>
+ <p>
+  &lt;
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/PrimeFactor.htm">
+   Previous
+  </a>
+  |
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/PrimeFactorUsingSpreadsheet.html">
+   Next
+  </a>
+  |
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/index.html">
+   Content
+  </a>
+  &gt;
+  <br>
+  <span class="AgExposeTop">
+   <!--#include virtual="../../../Ads/Ag Expose Top.log" -->
+  </span>
+ </p>
+ <h2>Algorithm for Prime Factorization
+ </h2>
+ <p>
+  Now we proceed with algorithm (method) to compute prime factor manually by hand computation.
+ </p>
+ <p>
+  The simplest algorithm to find the prime-factor is
+  <em>
+   by repeatedly dividing the number with the prime factor until the number becomes 1.
+  </em>
+ </p>
+ <blockquote>
+  <p>
+   Suppose our number is 100
+  </p>
+  <p>
+   We find smallest prime number that actually divides 100 and we found
+   <strong>
+    2
+   </strong>
+  </p>
+  <p>
+   Thus 100 divided by 2 become 50. Now our number becomes 50.
+  </p><div class="google-auto-placed ap_container" style="text-align: center; width: 100%; height: auto; clear: none;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-3592990240684847" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent;"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:175px;margin:0;padding:0;position:relative;visibility:visible;width:700px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:175px;margin:0;padding:0;position:relative;visibility:visible;width:700px;background-color:transparent;"><iframe width="700" height="175" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:700px;height:175px;" src="./Prime Factor_ Algorithm_files/saved_resource(1).html"></iframe></ins></ins></ins></div>
+  <p>
+   We find smallest prime number that actually divides 50 and again we found
+   <strong>
+    2
+   </strong>
+  </p>
+  <p>
+   Thus 50 divided by 2 become 25. Now our number is 25.
+  </p>
+  <p>
+   We find smallest prime number that actually divides 25 and we found
+   <strong>
+    5
+   </strong>
+   .
+  </p>
+  <p>
+   We divide 25 with 5 and produces 5. Now our number is 5.
+  </p>
+  <p>
+   Since 5 is also a prime number, our smallest prime number is
+   <strong>
+    5
+   </strong>
+   .
+  </p>
+  <p>
+   The division of 5 with 5 produces 1 and we stop the computation and gathering the result such that 100 = 2 x 2 x 5 x 5
+  </p>
+ </blockquote>
+ <p>
+  When we use procedural  programming, the algorithm of prime factor is as follow
+ </p>
+ <span class="AgExposeBottom">
+  <!--#include virtual="../../../Ads/ag expose bottom.log" -->
+ </span>
+ <p>
+  <span class="code">
+  Input  N
+  p  = 2
+  Print  N &amp; "="
+  Do  while N &gt; = p * p
+      If  N mod p = 0 then
+          Print p &amp; "*"
+          N = N / p  <em>(divide by prime  number)</em>
+      Else
+	      p  = p + 1
+      End  If
+  Loop
+  Print  N
+ </span>
+ </p><p>
+  The flow chart of above algorithm  is shown below.
+ </p>
+ <p>
+  <img alt="Prime factor Algorithm" height="427" src="./Prime Factor_ Algorithm_files/Algorithm-PrimeFactor_clip_image002.jpg" width="423">
+ </p>
+ <p>
+  <span class="AgExposeBottom">
+   <!--#include virtual="../../../Ads/ag expose bottom.log" -->
+  </span>
+  <a id="PrimeComposite">
+  </a>
+  After learning about divisors,  prime and composite number as well as prime factorization, you may want to try  the following online Divisibility-Prime-Factorization calculator. This interaction  program below determines whether your input is a prime or composite number. If it is  a composite number, the program will list the divisors and gives the prime factorization  which is unique for your input number.
+ </p>
+ <form name="myForm">
+  <p>
+   Input any positive integer number larger than 1:
+   <input id="txtInput" maxlength="12" name="txtInput" size="12" type="text" value="12345">
+   <input id="Run" name="Run" onclick="IUDivisibilityPrimeFactorization()" type="button" value="Run">
+  </p>
+  <p>
+   Result:
+   <br>
+   <textarea cols="70" id="txtResult" name="txtResult" rows="20">   </textarea>
+  </p>
+ </form>
+ <p>
+  In the next section, we will discuss slightly more  challenging problem: how to calculate prime factor of any positive integer in  Spreadsheet without macro (without do while loop). You need to think to do it  in parallel programming.
+ </p>
+ &lt;
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/PrimeFactor.htm">
+   Previous
+  </a>
+  |
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/PrimeFactorUsingSpreadsheet.html">
+   Next
+  </a>
+  |
+  <a href="https://people.revoledu.com/kardi/tutorial/BasicMath/Prime/index.html">
+   Content
+  </a>
+  &gt;
+  
+  
+</main>
+	</section><!-- #end content area -->
+        
+</div><!-- #end div #main .wrapper -->
+
+
+<!-- footer area -->    
+<footer>
+	<div id="epilogue" class="wrapper">
+    	Copyright © 2017 Kardi Teknomo
+    </div>
+    <div id="attribution" class="wrapper clearfix" style="color:#fff; font-size:11px;">Revoledu Design</div>
+    
+</footer><!-- #end footer area --> 
+
+
+<!-- jQuery -->
+<script src="./Prime Factor_ Algorithm_files/jquery.min.js.download"></script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./Prime Factor_ Algorithm_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+
+<script defer="" src="./Prime Factor_ Algorithm_files/jquery.flexslider-min.js.download"></script>
+
+<!-- fire ups - read this file!  -->   
+<script src="./Prime Factor_ Algorithm_files/main.js.download"></script>
+<!-- Inline JS-->
+<script src="./Prime Factor_ Algorithm_files/prime.js.download" type="text/javascript"></script>
+<!-- end of Inline JS-->
+<script src="./Prime Factor_ Algorithm_files/GoogleAnalytic.js.download"></script>
+
+<iframe id="google_osd_static_frame_1763877523953" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Prime Factor_ Algorithm_files/saved_resource(3).html"></iframe></body><iframe id="google_esf" name="google_esf" src="./Prime Factor_ Algorithm_files/zrt_lookup.html" data-ad-client="ca-pub-3592990240684847" style="display: none;"></iframe></html>

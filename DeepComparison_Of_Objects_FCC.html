@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Algorithm Object Comparison</title>
+    </head>
+    <body>
+        <h1>Comparing Objects with Objects</h1>
+        <p>The Algorithm to equate objects</p>
+        
+        <script>
+        function whatIsInAName(collection, source) {
+         for(let obj of collection){
+            for(let key in obj){
+//                console.log(key);
+                if((source.hasOwnProperty(key)!= false) && (Object.keys(source).length <= Object.keys(obj).length ) ){
+                  if((obj[key] == source[key])){
+                        console.log(obj);
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        whatIsInAName([{ first: "Romeo", last: "Montague" }, 
+        { first: "Mercutio", last: null }, 
+        { first: "Tybalt", last: "Capulet" }], 
+        { last: "Capulet" });
+
+        whatIsInAName([{ "apple": 1, "bat": 2 }, 
+        { "bat": 2 }, 
+        { "apple": 1, "bat": 2, "cookie": 2 }], 
+        { "apple": 1, "bat": 2 });
+
+//        whatIsInAName([{ "apple": 1, "bat": 2 }, 
+//        { "apple": 1 }, 
+//        { "apple": 1, "bat": 2, "cookie": 2 }, 
+//        { "bat":2 }], 
+//        { "apple": 1, "bat": 2 });
+
+        whatIsInAName([{"a": 1, 
+        "b": 2, "c": 3}], 
+        {"a": 1, "b": 9999, "c": 3});
+           
+
+        </script>
+
+    </body>
+</html>

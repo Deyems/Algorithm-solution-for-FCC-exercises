@@ -1,0 +1,136 @@
+function binaryAgent(str) {
+  let binaryInt = str.split(" ");
+  let newStr ="";
+  for(let bin of binaryInt){
+    bin = String.fromCharCode(Number("0b"+bin));
+    newStr += bin;
+  }
+  return newStr;
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+
+binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001");
+
+
+//TO CHECK IF ALL OBJ VALUES WERE ASSIGNED
+
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  
+  return collection.every((obj) => obj[pre]);
+}
+
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+
+
+
+//TO MAKE FUNCTIONS HAVE OPTIONAL PARAMETERS
+
+function addTogether() {
+  if(arguments.length >1){
+    let a = arguments[0];
+    let b = arguments[1];
+    if(typeof a != "number" || typeof b != "number") return undefined;
+    return a+b;
+  }else{
+    let a = arguments[0];
+    if(typeof a !== "number"){
+      return undefined;
+    }
+    return function remainsOne(b){
+      if(typeof b !== "number"){
+        return undefined;
+      }
+      return a + b;
+    };
+  }
+}
+
+console.log(addTogether(2,3));
+addTogether(2)([3]) 
+//should return undefined.
+
+
+
+
+
+
+//HOW TO USE GETTERS AND SETTERS
+//IN OBJECTS
+
+var Person = function(firstAndLast) {
+  // Complete the method below and implement the others similarly
+  let firstname = firstname || firstAndLast.split(" ")[0];
+  let lastname = lastname || firstAndLast.split(" ")[1];
+
+  this.getFullName = function() {
+    return firstname + " " + lastname;
+  };
+  
+  this.setFullName = function(firstAndLast) {
+    firstname = firstAndLast.split(" ")[0];
+  lastname = firstAndLast.split(" ")[1];
+  }
+
+  this.getFirstName = function() {
+    return firstname;
+  }
+
+  this.setFirstName = function(first) {
+    firstname = first;
+  }
+
+  this.getLastName = function() {
+    return lastname;
+  }
+
+  this.setLastName = function(last) {
+    lastname = last;
+  }
+
+  // return firstAndLast;
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
+
+bob.getFirstName() should return "Bob".
+bob.getLastName() should return "Ross".
+bob.getFullName() should return "Bob Ross".
+bob.getFullName() should return "Haskell Ross" after bob.setFirstName("Haskell").
+bob.getFullName() should return "Haskell Curry" after bob.setLastName("Curry").bob.getFullName() should return "Haskell Curry" after bob.setFullName("Haskell Curry").
+bob.getFirstName() should return "Haskell" after bob.setFullName("Haskell Curry").
+bob.getLastName() should return "Curry" after bob.setFullName("Haskell Curry")
+
+
+
+//TAKE TIME TO EDIT THE VALUE OF A PROPERTY
+//IN AN OBJECT AND USE IT TO CALCULATE 
+//FOR ANOTHER VALUE AND STORE IT IN THE 
+// OBJECT
+
+############
+MAP THE DEBRIS
+############
+
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  let orbitalPer;
+  for(let obj of arr){
+    
+    if(obj.hasOwnProperty("avgAlt")){
+obj["orbitalPeriod"] = Math.round(2*Math.PI*Math.sqrt((Math.pow(obj["avgAlt"]+earthRadius,3))/GM));
+    }
+  delete obj.avgAlt;
+  }
+return arr;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
+
+console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]));
+
+
+

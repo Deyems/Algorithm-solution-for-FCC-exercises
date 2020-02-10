@@ -1,0 +1,46 @@
+function sumAll(arr) {
+    let maxNo = Math.max(...arr);
+    let minNo = Math.min(...arr);
+    let acc = 0;
+    for(let i = minNo; i <= maxNo; ++i){
+      acc += i;
+    }
+    return acc; 
+}
+
+sumAll([1, 4]) should return a number.
+Passed
+sumAll([1, 4]) should return 10.
+Passed
+sumAll([4, 1]) should return 10.
+Passed
+sumAll([5, 10]) should return 45.
+Passed
+sumAll([10, 5]) should return 45
+
+
+###########
+finding the DIFFERENCES IN array
+#############
+function diffArray(arr1, arr2) {
+  var newArr = [],check;
+  arr2.forEach(item => {
+  check = arr1.includes(item);
+  if(!check){
+    newArr.push(item);
+  } 
+});
+  arr1.forEach(item => {
+    check = arr2.includes(item);
+  if(!check){
+    newArr.push(item);
+    }
+  });
+
+  // Same, same; but different.
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
+diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);

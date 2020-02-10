@@ -1,0 +1,41 @@
+function smallestCommons(arr) {
+  // let [start,end] = arr;
+  let start = Math.min(...arr);
+  let end = Math.max(...arr);
+  
+    let rangeArr = range(start,end);
+    let counter = 2;
+    let lcmPair = lcm(rangeArr[0],rangeArr[1]);
+    while(counter < rangeArr.length){
+      lcmPair = lcm(rangeArr[counter],lcmPair);
+      counter++;
+    }
+
+  return lcmPair;
+}
+
+function range(start,end){
+    let sieve = [];
+    if(start< end){
+      for(let i = start; i<=end; ++i){
+        sieve.push(i);
+        }  
+      } //End of if
+      return sieve;
+    } // End of Range fxn
+
+function lcm(a,b){
+  let lcm = (a*b)/hcf(a,b);
+  return lcm;
+}
+
+function hcf(a,b){
+  if(b==0){
+    return a;
+  }else{
+    return hcf(b,a%b);
+  }
+}
+
+smallestCommons([23, 18]);
+smallestCommons([1,5]);

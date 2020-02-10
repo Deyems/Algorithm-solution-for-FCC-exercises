@@ -1,0 +1,11 @@
+SEEK AND DESTROY
+//find an ELEMENT IN A GIVEN ARRAY AND DESTROY 
+//IT FROM THE ARRAY GIVEN
+function destroyer(arr,...others) {
+  // Remove all the values
+  return arr.filter((item)=>{
+    return others.indexOf(item) === -1;
+    });
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));

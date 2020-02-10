@@ -1,0 +1,32 @@
+function primeGenerator(num){
+
+function arrOfNum(num){
+  let start = 2;
+  let arr= [];
+ while(start<=num){
+  arr.push(start);
+  start++;
+  }
+ return arr;
+}
+
+//WILL GIVE A RETURN VAL OF PRIME
+//NUMBERS
+
+return arrOfNum(num).filter((val,index,arr)=> {
+ let factor = arr[0]; //Starting with 2;
+ let next;
+ while(factor < arr.length){
+   next = val/factor;
+if(arr.includes(next)){ return false; }
+  factor++;
+}
+ let squared = Math.sqrt(val);
+
+if(arr.includes(squared)) return false;
+return true;
+});
+
+}
+
+

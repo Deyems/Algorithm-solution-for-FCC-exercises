@@ -1,0 +1,45 @@
+SPINAL TAP CASE
+ALGORITHM
+
+Converting a String to another string with
+all-lowercase-words-joined-by-dashes
+
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  let pattern = /([A-Z][a-z]+)/;
+  let newStr = str.split(pattern).filter((item)=> {
+    if((item == "") || (item == " ") ||(item == "_")){
+      return false;
+  }else{ return true; }
+  });
+  let newArr = [];
+  for(let curVal of newStr){
+    newArr.push(curVal.replace("-","").replace(" ","").replace("_","").trim().toLowerCase());
+  }
+  newArr = newArr.join("-");
+  return newArr;
+}
+
+console.log(spinalCase('This Is Spinal Tap'));
+console.log(spinalCase("The_Andy_Griffith_Show"));
+console.log(spinalCase("Teletubbies say Eh-oh"));
+
+
+ANOTHER QUESTION ON INTERMEDIATE
+
+SEARCH AND REPLACE
+
+function myReplace(str, before, after) {
+  let pattern = /^[A-Z]/;
+  if(pattern.test(before)){
+    after = after[0].toUpperCase().concat(after.slice(1));
+  }
+  return str.replace(before,after);  
+}
+
+console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+
+

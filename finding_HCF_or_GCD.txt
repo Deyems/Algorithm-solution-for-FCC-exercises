@@ -1,0 +1,26 @@
+function gcd(a,b){
+
+ let rem = a%b;
+
+while(rem != 0){
+ a=b;
+ b=rem;
+
+if(a%b == 0) return b;
+rem = a%b;
+ }
+}
+
+function hcf(a,b){
+	if(b == 0) {
+return a;
+} else{
+	 return hcf(b, a%b);
+}
+
+}
+
+function lcm(a,b){
+
+
+}

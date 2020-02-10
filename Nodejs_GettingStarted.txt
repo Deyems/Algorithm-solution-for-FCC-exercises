@@ -1,0 +1,26 @@
+LESSONS FROM PLURALSIGHT VIDEOS
+BY SAMER BUNA
+
+Why Node?
+Wrapper Around V8
+Built-in Modules
+Asychronous APIs
+C++ addons
+Debugger and other utilities
+NPM
+Module dependency manager(CommonJS)
+
+Websites to Reach
+nodejs.org/api/index.html
+
+Cons of Javascript
+Non-blocking Nature - Different way of Thinking
+NPM Registry - Picking too many options
+Enable Shipping Smaller Codes - Small Packages
+
+
+http://bit.ly/node-test
+
+Github repository used for Course
+
+https://github.com/jscomplete/ngs

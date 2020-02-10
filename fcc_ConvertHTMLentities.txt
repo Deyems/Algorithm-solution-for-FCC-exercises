@@ -1,0 +1,38 @@
+function convertHTML(str) {
+  // &colon;&rpar;
+  let characterSet = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&apos;"
+  };
+  let pattern = /&|<|>|\'|\"/;
+  let storeDb = str.split("");
+  for (let i = 0; i < storeDb.length; ++i){
+    if(pattern.test(storeDb[i])){
+        storeDb[i] = characterSet[storeDb[i]];
+    }
+  }
+  return storeDb.join("");
+}
+
+convertHTML("Hamburgers < Pizza < Tacos");
+convertHTML("Dolce & Gabbana");
+
+
+
+function fearNotLetter(str) {
+  let diff;
+  for(let i = 0; i < str.length; ++i){
+    if(str[i+1] == undefined){ return undefined}
+      diff = str[i+1].charCodeAt()-str[i].charCodeAt();
+    if(diff>1){
+      return String.fromCharCode(str[i].charCodeAt()+1);
+    }
+  }
+}
+
+console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"));
+
+console.log(fearNotLetter("stvwx"));

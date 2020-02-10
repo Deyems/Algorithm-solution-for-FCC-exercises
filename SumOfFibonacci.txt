@@ -1,0 +1,48 @@
+//################
+SUMMING ALL FIBONACCI NUMBERS BEFORE
+A GIVEN NUMBER
+//##################
+function fib(num){
+let arr = [1,1];
+    
+while(arr[arr.length-1] < num){
+let next = arr[arr.length-1] + arr[arr.length-2];
+    if(next > num){
+            break;
+        }
+
+arr.push(next);
+}
+
+return arr.reduce((acc,val) => {
+	if(val%2 !== 0){
+	acc += val;
+	}
+	return acc;
+},0);
+}
+
+sumFibs(1000) should return 1785.
+sumFibs(4000000) should return 4613732.
+
+
+//####################
+
+MORE SUCCINCT REDUCE FUNCTION
+//###############
+
+function sumFibs(num) {
+let arr = [1,1];
+ 
+while(arr[arr.length-1] < num){
+let next = arr[arr.length-1] + arr[arr.length-2];
+  if(next > num){
+    break;
+  }
+arr.push(next);
+}
+return arr.reduce((acc,val) => acc = (val%2 !==0) ? acc+val : acc);
+
+}
+
+sumFibs(75025);
